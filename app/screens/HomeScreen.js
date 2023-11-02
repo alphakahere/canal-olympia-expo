@@ -1,14 +1,40 @@
-import { StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import React from "react";
 import Screen from "../components/Screen";
 import StatusBar from "../components/StatusBar";
+import colors from "../config/colors";
+import { FlatList } from "react-native";
+import { Text } from "react-native";
+import TagsList from "../components/tags/TagsList";
+
+const tags = [
+	"News",
+	"Populars",
+	"Trendings",
+	"Top Picks for You",
+	"Recently Added",
+	"Action & Adventure",
+	"Comedies",
+	"Dramas",
+	"Horror Movies",
+	"Documentaries",
+];
 
 export default function HomeScreen() {
 	return (
 		<Screen>
 			<StatusBar />
+			<View style={styles.main}>
+				<TagsList tags={tags} />
+			</View>
 		</Screen>
 	);
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+	main: {
+		flex: 1,
+		backgroundColor: colors.blueDark,
+		padding: 10,
+	},
+});
