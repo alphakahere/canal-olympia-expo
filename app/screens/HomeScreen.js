@@ -1,10 +1,8 @@
-import { ScrollView, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React from "react";
 import Screen from "../components/Screen";
 import StatusBar from "../components/StatusBar";
 import colors from "../config/colors";
-import { FlatList } from "react-native";
-import { Text } from "react-native";
 import TagsList from "../components/tags/TagsList";
 
 const tags = [

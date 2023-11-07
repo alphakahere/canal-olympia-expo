@@ -4,4 +4,5 @@ export default {
 	blueDark: "#0A1445",
 	blueLight: "#142a62",
 	dark: "#0E0E0F",
+	blueGray: "#637394",
 };
