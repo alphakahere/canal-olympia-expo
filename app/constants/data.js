@@ -1,7 +1,7 @@
 export const films = [
 	{
 		name: "Paw Patrol",
-		image: "../assets/images/carousels/01.jpg",
+		image: require("../assets/images/carousels/01.jpg"),
 		tags: ["Francais", "Fun", "Animé"],
 		watching: "13.2K",
 		time: "01h57",
@@ -9,7 +9,7 @@ export const films = [
 	},
 	{
 		name: "Les Trolls",
-		image: "../assets/images/carousels/02.jpg",
+		image: require("../assets/images/carousels/02.jpg"),
 		tags: ["Francais", "Enquiête", "Feur"],
 		watching: "2.6K",
 		time: "02h28",
@@ -17,7 +17,7 @@ export const films = [
 	},
 	{
 		name: "SIRA",
-		image: "../assets/images/carousels/03.png",
+		image: require("../assets/images/carousels/03.png"),
 		tags: ["Francais", "Fun", "Animé"],
 		watching: "45K",
 		time: "01h48",
@@ -25,7 +25,7 @@ export const films = [
 	},
 	{
 		name: "Five Nights",
-		image: "../assets/images/carousels/04.jpg",
+		image: require("../assets/images/carousels/04.jpg"),
 		tags: ["Francais", "Fun", "Animé"],
 		watching: "400.3K",
 		time: "03h01",

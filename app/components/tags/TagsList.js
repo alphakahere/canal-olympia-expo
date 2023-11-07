@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView } from "react-native";
 import React from "react";
 import TagItem from "./TagItem";
 
@@ -15,5 +15,3 @@ export default function TagsList({ tags }) {
 		</ScrollView>
 	);
 }
-
-const styles = StyleSheet.create({});
