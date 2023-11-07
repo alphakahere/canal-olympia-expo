@@ -4,6 +4,7 @@ import Screen from "../components/Screen";
 import StatusBar from "../components/StatusBar";
 import colors from "../config/colors";
 import TagsList from "../components/tags/TagsList";
+import Carousels from "../components/carousels/Carousel";
 
 const tags = [
 	"News",
@@ -24,6 +25,7 @@ export default function HomeScreen() {
 			<StatusBar />
 			<View style={styles.main}>
 				<TagsList tags={tags} />
+				<Carousels />
 			</View>
 		</Screen>
 	);
