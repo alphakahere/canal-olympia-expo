@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
 		color: colors.lightGrey,
 		fontSize: 24,
 		fontWeight: "700",
+		marginBottom: 5,
 	},
 	tagsContainer: {
 		display: "flex",
