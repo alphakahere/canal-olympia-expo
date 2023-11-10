@@ -44,10 +44,10 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	modalView: {
-		backgroundColor: "#0c208080",
+		backgroundColor: "rgba(12, 32, 128, 1)",
 		padding: 35,
 		alignItems: "center",
-		elevation: 5,
+		elevation: 10,
 		width: "100%",
 		height: 250,
 		position: "absolute",

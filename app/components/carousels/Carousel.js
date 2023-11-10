@@ -14,7 +14,7 @@ export default function Carousels() {
 				layout="default"
 				layoutCardOffset={9}
 				ref={isCarousel}
-				data={films}
+				data={films.slice(0, 4)}
 				renderItem={CarouselCardItem}
 				sliderWidth={SLIDER_WIDTH}
 				itemWidth={ITEM_WIDTH}
@@ -46,5 +46,6 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		justifyContent: "center",
 		paddingHorizontal: 50,
+		marginTop: 20,
 	},
 });

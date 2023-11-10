@@ -1,4 +1,11 @@
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import {
+	FlatList,
+	Image,
+	SafeAreaView,
+	StyleSheet,
+	Text,
+	View,
+} from "react-native";
 import React from "react";
 import Screen from "../components/Screen";
 import StatusBar from "../components/StatusBar";
@@ -7,6 +14,7 @@ import TagsList from "../components/tags/TagsList";
 import Carousels from "../components/carousels/Carousel";
 import { films } from "../constants/data";
 import { ScrollView } from "react-native";
+import FilmCardItem from "../components/home/FilmCardItem";
 
 const tags = [
 	"News",
@@ -29,30 +37,22 @@ export default function HomeScreen() {
 				<ScrollView>
 					<TagsList tags={tags} />
 					<Carousels />
-					<View>
-						<Text>Semaine du 06-12 Nov</Text>
+					<View style={styles.dateContainer}>
+						<Text style={styles.date}>
+							Semaine du 06-12 Nov
+						</Text>
 						<Image
 							source={require("../assets/images/Glyph.png")}
 						/>
 					</View>
 					<FlatList
-						data={films}
+						data={films.slice(2, 6)}
 						numColumns={2}
 						renderItem={({ item, index }) => (
-							<View key={index}>
-								<Image
-									source={item.image}
-									style={{
-										height: 100,
-										width: "100%",
-									}}
-								/>
-								<View>
-									<Text>{item.time}</Text>
-								</View>
-								<Text>{item.name}</Text>
-								<Text>{item.type}</Text>
-							</View>
+							<FilmCardItem
+								item={item}
+								key={index}
+							/>
 						)}
 					/>
 				</ScrollView>
@@ -66,5 +66,17 @@ const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: colors.blueDark,
 		padding: 10,
+	},
+	dateContainer: {
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "space-between",
+		marginBottom: 15,
+	},
+	date: {
+		color: colors.white,
+		fontSize: 20,
+		fontStyle: "normal",
+		fontWeight: "700",
 	},
 });
