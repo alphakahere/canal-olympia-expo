@@ -1,8 +1,9 @@
-import { StyleSheet, Text, TextInput } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import React from "react";
 import colors from "../../config/colors";
 import Button from "../Button";
 import AppModal from "./AppModal";
+import AppTextInput from "../AppTextInput";
 
 export default function LoginModal({ isModalVisible, toggle }) {
 	return (
@@ -11,7 +12,7 @@ export default function LoginModal({ isModalVisible, toggle }) {
 			<Text style={styles.subTitle}>
 				Access to purchased tickets
 			</Text>
-			<TextInput
+			<AppTextInput
 				placeholder="Phone number"
 				keyboardType="phone-pad"
 				style={styles.textInput}
@@ -37,18 +38,5 @@ const styles = StyleSheet.create({
 		fontStyle: "normal",
 		fontWeight: "400",
 		color: colors.blueGray,
-	},
-	textInput: {
-		borderWidth: 1,
-		borderStyle: "solid",
-		borderColor: "#6d9eff1a",
-		borderRadius: 8,
-		width: "100%",
-		padding: 10,
-		marginVertical: 15,
-		color: colors.white,
-		fontSize: 16,
-		fontStyle: "normal",
-		fontWeight: "200",
 	},
 });

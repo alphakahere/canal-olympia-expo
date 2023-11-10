@@ -22,7 +22,9 @@ export default function AppModal({ children, isVisible, toggle }) {
 							{ height: "auto" },
 						]}
 					>
-						{children}
+						<View style={styles.modalContent}>
+							{children}
+						</View>
 					</View>
 				</View>
 			</TouchableWithoutFeedback>
@@ -44,5 +46,8 @@ const styles = StyleSheet.create({
 		bottom: 0,
 		borderTopLeftRadius: 20,
 		borderTopRightRadius: 20,
+	},
+	modalContent: {
+		width: "100%",
 	},
 });

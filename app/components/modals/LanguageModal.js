@@ -3,21 +3,19 @@ import React from "react";
 import colors from "../../config/colors";
 import AppModal from "./AppModal";
 import { languages } from "../../constants/data";
+import SeparatorComponent from "../SeparatorComponent";
 
 export default function LanguageModal({ isModalVisible, toggle }) {
 	return (
 		<AppModal isVisible={isModalVisible} toggle={toggle}>
 			<FlatList
 				data={languages}
-				ItemSeparatorComponent={
-					<View style={styles.separator} />
-				}
+				ItemSeparatorComponent={SeparatorComponent}
 				renderItem={({ item }) => (
 					<Text style={styles.item} key={item}>
 						{item}
 					</Text>
 				)}
-				style={{ width: "100%" }}
 			/>
 		</AppModal>
 	);
@@ -31,10 +29,5 @@ const styles = StyleSheet.create({
 		fontWeight: "400",
 		color: colors.white,
 		paddingVertical: 14,
-	},
-	separator: {
-		width: "100%",
-		backgroundColor: "rgba(109, 158, 255, 0.10)",
-		height: 1,
 	},
 });

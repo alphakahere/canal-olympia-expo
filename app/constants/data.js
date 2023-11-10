@@ -52,3 +52,14 @@ export const films = [
 ];
 
 export const languages = ["Arabe", "Français", "Anglais"];
+export const cities = [
+	"KALOUM, Conakry Guinée",
+	"Teranga, Dakar Sénégal",
+	"REBERO, Kigali Rwanda",
+	"Yaoundé 1, Yaoundé Cameroun",
+	"Bessengue, Douala Cameroun",
+	"WOLOGUEDE, Cotonou BENIN",
+	"M’PITA, Pointe Noire Congo",
+	"GODOPE, Lomé Togo",
+	"MIDE, Lomé Togo",
+];

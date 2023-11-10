@@ -1,61 +1,51 @@
-import {
-	Modal,
-	StyleSheet,
-	Text,
-	TextInput,
-	TouchableWithoutFeedback,
-	View,
-} from "react-native";
+import { FlatList, Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import colors from "../../config/colors";
-import Button from "../Button";
 import AppModal from "./AppModal";
+import SeparatorComponent from "../SeparatorComponent";
+import { cities } from "../../constants/data";
+import AppTextInput from "../AppTextInput";
 
 export default function CityModal({ isModalVisible, toggle }) {
 	return (
 		<AppModal isVisible={isModalVisible} toggle={toggle}>
-			<Text style={styles.title}>Login !</Text>
-			<Text style={styles.subTitle}>
-				Access to purchased tickets
-			</Text>
-			<TextInput
-				placeholder="Phone number"
-				keyboardType="phone-pad"
-				style={styles.textInput}
-				placeholderTextColor="#637394"
+			<View style={styles.searchContainer}>
+				<Image
+					source={require("../../assets/images/Glyph.png")}
+					style={styles.searchIcon}
+				/>
+				<AppTextInput
+					placeholder="Search"
+					style={styles.textInput}
+					placeholderTextColor="#637394"
+				/>
+			</View>
+			<FlatList
+				data={cities}
+				ItemSeparatorComponent={SeparatorComponent}
+				renderItem={({ item, index }) => (
+					<Text style={styles.item} key={index}>
+						{item}
+					</Text>
+				)}
 			/>
-			<Button text="Login" />
 		</AppModal>
 	);
 }
 
 const styles = StyleSheet.create({
-	title: {
-		marginBottom: 10,
-		textAlign: "center",
-		fontSize: 24,
-		fontStyle: "normal",
-		fontWeight: "700",
-		color: colors.white,
-	},
-	subTitle: {
+	item: {
 		textAlign: "center",
 		fontSize: 16,
 		fontStyle: "normal",
 		fontWeight: "400",
-		color: colors.blueGray,
-	},
-	textInput: {
-		borderWidth: 1,
-		borderStyle: "solid",
-		borderColor: "#6d9eff1a",
-		borderRadius: 8,
-		width: "100%",
-		padding: 10,
-		marginVertical: 15,
 		color: colors.white,
-		fontSize: 16,
-		fontStyle: "normal",
-		fontWeight: "200",
+		paddingVertical: 14,
+	},
+	searchContainer: { position: "relative" },
+	searchIcon: {
+		position: "absolute",
+		top: 20,
+		right: 0,
 	},
 });

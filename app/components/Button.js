@@ -13,7 +13,7 @@ export default function Button({ text, onPress }) {
 const styles = StyleSheet.create({
 	container: {
 		backgroundColor: colors.primary,
-		paddingVertical: 10,
+		paddingVertical: 12,
 		paddingHorizontal: 20,
 		borderRadius: 8,
 		shadowColor: "rgba(255, 128, 54, 0.25)",
@@ -24,5 +24,6 @@ const styles = StyleSheet.create({
 		color: colors.white,
 		fontSize: 14,
 		fontWeight: "700",
+		textAlign: "center",
 	},
 });
