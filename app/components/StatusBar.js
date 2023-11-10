@@ -3,13 +3,16 @@ import React, { useState } from "react";
 import colors from "../config/colors";
 import Button from "./Button";
 import ButtonPopup from "./ButtonPopup";
-import LoginModal from "./LoginModal";
+import LoginModal from "./modals/LoginModal";
+import CityModal from "./modals/CityModal";
+import LanguageModal from "./modals/LanguageModal";
+import { useShowModal } from "../utils/util";
 
 export default function StatusBar() {
-	const [isModalVisible, setIsModalVisible] = useState(false);
-	const toggleVisible = () => {
-		setIsModalVisible((isModalVisible) => !isModalVisible);
-	};
+	const { isVisible, toggle } = useShowModal();
+	const language = useShowModal();
+	const city = useShowModal();
+
 	return (
 		<>
 			<View style={styles.container}>
@@ -19,16 +22,23 @@ export default function StatusBar() {
 				<ButtonPopup
 					text="Dakar"
 					image={require("../assets/images/location.png")}
+					onPress={city.toggle}
 				/>
 				<ButtonPopup
 					text="Eng"
 					image={require("../assets/images/language.png")}
+					onPress={language.toggle}
 				/>
-				<Button text="Login" onPress={toggleVisible} />
+				<Button text="Login" onPress={toggle} />
 			</View>
-			<LoginModal
-				isModalVisible={isModalVisible}
-				toggle={toggleVisible}
+			<LoginModal isModalVisible={isVisible} toggle={toggle} />
+			<CityModal
+				isModalVisible={city.isVisible}
+				toggle={city.toggle}
+			/>
+			<LanguageModal
+				isModalVisible={language.isVisible}
+				toggle={language.toggle}
 			/>
 		</>
 	);

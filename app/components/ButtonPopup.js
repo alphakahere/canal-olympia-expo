@@ -3,9 +3,9 @@ import React from "react";
 import colors from "../config/colors";
 import { Image } from "react-native";
 
-export default function ButtonPopup({ text, image }) {
+export default function ButtonPopup({ text, image, onPress }) {
 	return (
-		<TouchableWithoutFeedback>
+		<TouchableWithoutFeedback onPress={onPress}>
 			<View style={styles.container}>
 				<Image source={image} />
 				<Text style={styles.text}>{text}</Text>

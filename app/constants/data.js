@@ -50,3 +50,5 @@ export const films = [
 		type: "Combat",
 	},
 ];
+
+export const languages = ["Arabe", "Français", "Anglais"];
