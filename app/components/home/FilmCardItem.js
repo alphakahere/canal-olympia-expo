@@ -11,8 +11,8 @@ export default function FilmCardItem({ item }) {
 				style={styles.image}
 				alt="film image"
 			/>
-			<View>
-				<Text>{item.time}</Text>
+			<View style={styles.timeContainer}>
+				<Text style={styles.time}>{item.time}</Text>
 			</View>
 			<Text style={styles.name}>{item.name}</Text>
 			<Text style={styles.type}>{item.type}</Text>
@@ -22,15 +22,17 @@ export default function FilmCardItem({ item }) {
 
 const styles = StyleSheet.create({
 	container: {
-		width: "50%",
-		marginRight: 10,
+		flex: 1,
 		borderRadius: 8,
-		marginBottom: 15,
+		position: "relative",
+		margin: 10,
 	},
 	image: {
 		borderRadius: 8,
 		width: "100%",
+		height: 230,
 		objectFit: "cover",
+		marginBottom: 10,
 	},
 	name: {
 		color: colors.white,
@@ -43,5 +45,20 @@ const styles = StyleSheet.create({
 		fontSize: 14,
 		fontStyle: "normal",
 		fontWeight: "400",
+	},
+	timeContainer: {
+		backgroundColor: colors.primary,
+		borderRadius: 4,
+		paddingVertical: 4,
+		paddingHorizontal: 8,
+		position: "absolute",
+		top: 10,
+		right: 10,
+	},
+	time: {
+		fontSize: 12,
+		fontStyle: "normal",
+		fontWeight: "700",
+		color: colors.white,
 	},
 });
