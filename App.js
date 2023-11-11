@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import MainScreen from "./app/screens/MainScreen";
 import HomeScreen from "./app/screens/HomeScreen";
+import MovieNavigation from "./app/navigation/MovieNavigation";
 
 const Stack = createStackNavigator();
 
@@ -27,5 +28,5 @@ export default function App() {
 	// 		</Stack.Navigator>
 	// 	</NavigationContainer>
 	// );
-	return <HomeScreen />;
+	return <MovieNavigation />;
 }
