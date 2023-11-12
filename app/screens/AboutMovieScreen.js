@@ -5,6 +5,18 @@ import Button from "../components/Button";
 import colors from "../config/colors";
 import AppText from "../components/AppText";
 import style from "../config/style";
+import { useNavigation } from "@react-navigation/native";
+
+const ButtonSelectSession = () => {
+	const navigation = useNavigation();
+	const goToSessionScreen = () => {
+		navigation.navigate("sessions");
+	};
+
+	return (
+		<Button text="Select Session" pv={16} onPress={goToSessionScreen} />
+	);
+};
 
 const FilmDetailLine = ({ label, value }) => {
 	return (
@@ -91,7 +103,7 @@ export default function AboutMovieScreen() {
 				</View>
 			</ScrollView>
 			<View style={styles.buttonContainer}>
-				<Button text="Select Session" pv={16} />
+				<ButtonSelectSession />
 			</View>
 		</>
 	);

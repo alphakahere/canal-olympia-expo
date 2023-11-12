@@ -19,7 +19,7 @@ const Tab = createMaterialTopTabNavigator();
 const BackButton = () => {
 	const navigation = useNavigation();
 	const goBack = () => {
-		navigation.goBack();
+		navigation.navigate("Main");
 	};
 
 	return (
