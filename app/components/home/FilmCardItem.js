@@ -1,24 +1,35 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 import React from "react";
 import { Image } from "react-native";
 import colors from "../../config/colors";
+import { useNavigation } from "@react-navigation/native";
 
-export default function FilmCardItem({ item }) {
+const FilmCardItem = ({ item }) => {
+	const navigation = useNavigation();
+	const onPress = () => {
+		navigation.navigate("MovieNavigation", {
+			screen: "AboutMovieScreen",
+		});
+	};
+
 	return (
-		<View style={styles.container}>
-			<Image
-				source={item.image}
-				style={styles.image}
-				alt="film image"
-			/>
-			<View style={styles.timeContainer}>
-				<Text style={styles.time}>{item.time}</Text>
+		<TouchableWithoutFeedback onPress={onPress}>
+			<View style={styles.container}>
+				<Image
+					source={item.image}
+					style={styles.image}
+					alt="film image"
+				/>
+				<View style={styles.timeContainer}>
+					<Text style={styles.time}>{item.time}</Text>
+				</View>
+				<Text style={styles.name}>{item.name}</Text>
+				<Text style={styles.type}>{item.type}</Text>
 			</View>
-			<Text style={styles.name}>{item.name}</Text>
-			<Text style={styles.type}>{item.type}</Text>
-		</View>
+		</TouchableWithoutFeedback>
 	);
-}
+};
+export default FilmCardItem;
 
 const styles = StyleSheet.create({
 	container: {

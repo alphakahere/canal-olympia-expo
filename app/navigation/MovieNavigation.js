@@ -35,40 +35,34 @@ const BackButton = () => {
 export default function MovieNavigation() {
 	return (
 		<Screen style={styles.container}>
-			<NavigationContainer>
-				<View style={styles.headeaContainer}>
-					<BackButton />
-					<Text style={style.textStyle}>Expendables</Text>
-				</View>
-				<Tab.Navigator
-					screenOptions={{
-						tabBarActiveTintColor: colors.primary,
-						tabBarInactiveTintColor: colors.blueGray,
-						tabBarLabelStyle: {
-							fontSize: 16,
-							fontWeight: "700",
-						},
-						tabStyle: { width: 150 },
-						tabBarIndicatorContainerStyle: {
-							backgroundColor:
-								"rgba(12, 32, 128, 1)",
-						},
-						tabBarIndicatorStyle: {
-							backgroundColor: colors.primary,
-							height: 4,
-						},
-					}}
-				>
-					<Tab.Screen
-						name="about"
-						component={AboutMovieScreen}
-					/>
-					<Tab.Screen
-						name="sessions"
-						component={SessionMovieScreen}
-					/>
-				</Tab.Navigator>
-			</NavigationContainer>
+			<View style={styles.headeaContainer}>
+				<BackButton />
+				<Text style={style.textStyle}>Expendables</Text>
+			</View>
+			<Tab.Navigator
+				screenOptions={{
+					tabBarActiveTintColor: colors.primary,
+					tabBarInactiveTintColor: colors.blueGray,
+					tabBarLabelStyle: {
+						fontSize: 16,
+						fontWeight: "700",
+					},
+					tabStyle: { width: 150 },
+					tabBarIndicatorContainerStyle: {
+						backgroundColor: "rgba(12, 32, 128, 1)",
+					},
+					tabBarIndicatorStyle: {
+						backgroundColor: colors.primary,
+						height: 4,
+					},
+				}}
+			>
+				<Tab.Screen name="about" component={AboutMovieScreen} />
+				<Tab.Screen
+					name="sessions"
+					component={SessionMovieScreen}
+				/>
+			</Tab.Navigator>
 		</Screen>
 	);
 }

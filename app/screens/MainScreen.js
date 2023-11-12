@@ -7,8 +7,12 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import colors from "../config/colors";
+import { useNavigation } from "@react-navigation/native";
+import HomeScreen from "./HomeScreen";
 
-export default function MainScreen() {
+const MainScreen = () => {
+	const navigation = useNavigation();
+
 	return (
 		<View style={styles.container}>
 			<ImageBackground
@@ -24,14 +28,24 @@ export default function MainScreen() {
 					]}
 					style={styles.gradient}
 				>
-					<TouchableOpacity style={styles.button}>
+					<TouchableOpacity
+						style={styles.button}
+						onPress={() => {
+							navigation.navigate("Home", {
+								screen: "HomeScreen",
+							});
+							console.log("Hello");
+						}}
+					>
 						<Text style={styles.text}>Commencez</Text>
 					</TouchableOpacity>
 				</LinearGradient>
 			</ImageBackground>
 		</View>
 	);
-}
+};
+
+export default MainScreen;
 
 const styles = StyleSheet.create({
 	container: {

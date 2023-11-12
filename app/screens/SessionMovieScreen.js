@@ -59,7 +59,7 @@ const data = [...Array(10)].map((item, i) => {
 	};
 });
 
-export default function AboutMovieScreen() {
+export default function SessionMovieScreen() {
 	return (
 		<View style={styles.content}>
 			<View style={styles.header}>
